@@ -1,10 +1,16 @@
 # CakeFest 2012 Backbone talk Files
 
+This is a set of plugins which will be a great way of learning to integrate backbone.js into your CakePHP app. 
+
+I will be giving a talk at this years CakeFest and these files will give you a fuller picture of what I will be talking about.
+
 ## Installation
 
 ### MongoDb
 
-This demo depends on MongoDB and Yasushi Ichikawa (ichikaway) MongoDB datasource, so please install the DB and PHP Mongo Driver.
+This demo depends on MongoDB using Yasushi Ichikawa's (ichikaway) MongoDB datasource, so please install the DB and PHP Mongo Driver.
+
+The datasource is included in the bundled plugins so there is no need to install it yourself.
 
 ### The other stuff
 
