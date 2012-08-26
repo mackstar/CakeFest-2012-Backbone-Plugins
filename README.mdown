@@ -16,7 +16,7 @@ From inside your CakePHP app directory.
 	git submodule init
 	git submodule update
 	
-To your app/Config/bootstrap.php file add
+To your `app/Config/bootstrap.php` file add
 
 	CakePlugin::loadAll(array(
 		'AssetCompress',
@@ -27,7 +27,7 @@ To your app/Config/bootstrap.php file add
 		'BackboneCars' => array('routes' => true),
 	));
 
-Create an asset_compress.ini file add it to your app/Config directory.
+Create an `asset_compress.ini` file add it to your `app/Config` directory.
 Add something resembling the following to that file.
 
 	[General]
@@ -64,7 +64,7 @@ Add something resembling the following to that file.
 	[coffee.js]
 	files[] = coffee/models.coffee
 	
-Add something like the below to you database.php
+Add something like the below to you `database.php`
 
 	class DATABASE_CONFIG {
 
@@ -78,4 +78,4 @@ Add something like the below to you database.php
 
 Now it should be working!
 
-Checkout routes at /todos, /cars and /cafes to hopefully see demos working.
+Checkout routes at `/todos`, `/cars` and `/cafes` to hopefully see the demos.
