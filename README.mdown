@@ -1,1 +1,81 @@
 # CakeFest 2012 Backbone talk Files
+
+## Installation
+
+### MongoDb
+
+This demo depends on MongoDB and Yasushi Ichikawa (ichikaway) MongoDB datasource, so please install the DB and PHP Mongo Driver.
+
+### The other stuff
+
+From inside your CakePHP app directory.
+
+	rm -rf Plugin
+	git clone https://github.com/mackstar/CakeFest-2012-Backbone-Plugins.git Plugin
+	cd Plugin
+	git submodule init
+	git submodule update
+	
+To your app/Config/bootstrap.php file add
+
+	CakePlugin::loadAll(array(
+		'AssetCompress',
+		'Mongodb',
+		'Backbone',
+		'BackboneCafe' => array('routes' => true),
+		'BackboneTodos' => array('routes' => true),
+		'BackboneCars' => array('routes' => true),
+	));
+
+Create an asset_compress.ini file add it to your app/Config directory.
+Add something resembling the following to that file.
+
+	[General]
+	cacheConfig = false
+
+	[js]
+	paths[] = APP/Plugin/Backbone/webroot/js/*
+	paths[] = APP/Plugin/BackboneTodos/webroot/js/*
+	paths[] = APP/Plugin/BackboneCars/webroot/js/*
+	paths[] = APP/Plugin/BackboneCafe/webroot/js/*
+	filters[] = CoffeeScript
+
+	[css]
+	cachePath = WEBROOT/cache_css/
+
+	[backbone-base.js]
+	files[] = lib/jquery-min.js
+	files[] = lib/underscore-min.js
+	files[] = lib/backbone-min.js
+
+	[todos.js]
+	files[] = todo/models.js
+	files[] = todo/collections.js
+	files[] = todo/views.js
+	files[] = todo/app.js
+
+	[cars.js]
+	files[] = lib/backbone.syphon.min.js
+	files[] = cars/models.js
+	files[] = cars/collections.js
+	files[] = cars/views.js
+	files[] = cars/router.js
+	#
+	[coffee.js]
+	files[] = coffee/models.coffee
+	
+Add something like the below to you database.php
+
+	class DATABASE_CONFIG {
+
+		public $default = array(
+	          'datasource' => 'Mongodb.MongodbSource',
+	          'database' => 'cake-backbone',
+	          'host' => 'localhost',
+	          'port' => 27017,
+	      );
+	}
+
+Now it should be working!
+
+Checkout routes at /todos, /cars and /cafes to hopefully see demos working.
