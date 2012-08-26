@@ -1,0 +1,15 @@
+[submodule "Backbone"]
+	path = Backbone
+	url = git://github.com/mackstar/CakePhp-Backbone-Plugin.git
+[submodule "BackboneCars"]
+	path = BackboneCars
+	url = git://github.com/mackstar/CakePHP-Backbone-Cars-Demo.git
+[submodule "BackboneTodos"]
+	path = BackboneTodos
+	url = git://github.com/mackstar/CakePHP-Backbone-Todos.git
+[submodule "Mongodb"]
+	path = Mongodb
+	url = git://github.com/ichikaway/cakephp-mongodb.git
+[submodule "asset_compress"]
+	path = asset_compress
+	url = git://github.com/markstory/asset_compress.git
